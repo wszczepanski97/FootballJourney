@@ -21,3 +21,7 @@ yarn run dev or npm run dev = start a server
 # Screenshots
 
 ![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney0)
+![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney1)
+![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney2)
+![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney3)
+![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney4)
