@@ -15,3 +15,9 @@ App takes data from two APIs. It shows scores of live events and if you want, yo
 yarn run start or npm start = run webpack
 
 yarn run dev or npm run dev = start a server
+
+
+
+# Screenshots
+
+![alt text](https://github.com/wszczepanski97/footballjourney/blob/master/photos/FootballJourney0)
