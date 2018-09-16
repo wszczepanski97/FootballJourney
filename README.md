@@ -1,10 +1,14 @@
 # startingPoint
 
-yarn install albo npm install
-yarn run dev - starujemy server
-yarn run start - sam webpack
+App takes data from two APIs. It shows scores of live events and if you want, you can check the league table of chosen country.
 
-albo 
 
-npm run dev 
-npm run start
+
+
+
+# To watch
+
+
+yarn run start or npm start = run webpack
+
+yarn run dev or npm run dev = start a server
