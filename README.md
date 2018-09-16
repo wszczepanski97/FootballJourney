@@ -1,5 +1,6 @@
-# startingPoint
+# Football Journey
 
+My first App
 App takes data from two APIs. It shows scores of live events and if you want, you can check the league table of chosen country.
 
 
