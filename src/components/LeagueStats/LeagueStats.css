@@ -1,0 +1,57 @@
+.leaguestats {
+    min-height: 100vh;
+}
+
+.table{
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.tablePadding {
+    padding:7px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.buttonspace{
+    margin: 20px auto;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltipposition .position, .tooltipgames .playedGames, .tooltipwon .won, .tooltipdrawn .drawn, .tooltiplost .lost, .tooltipgoalsf .goalsFor, .tooltipgoalsa .goalsAgainst, .tooltipgoalsd .goalDifference, .tooltippoints .points {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltipposition:hover .position, .tooltipgames:hover .playedGames, .tooltipwon:hover .won, .tooltipdrawn:hover .drawn, .tooltiplost:hover .lost, .tooltipgoalsf:hover .goalsFor, .tooltipgoalsa:hover .goalsAgainst, .tooltipgoalsd:hover .goalDifference, .tooltippoints:hover .points{
+    visibility: visible;
+}
+
+.arrowcontainer {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:50%;
+    margin: 1rem auto;
+}
+
+.arrowButton{
+    background-color: #b9b9b9;
+    padding:5px;
+    color: #FFFFFF;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
