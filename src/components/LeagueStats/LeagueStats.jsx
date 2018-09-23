@@ -22,7 +22,7 @@ class LeagueStats extends Component {
                 matchday: 1
             })
         }
-        fetch(`http://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
+        fetch(`https://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
             'headers': {'X-Auth-Token': "66a3ae1a99224ad7b40b7c3e0360b7d8"}
         }).then(resp => resp.json()).then(response => {
             const fixtures = response.matches;
@@ -62,7 +62,7 @@ class LeagueStats extends Component {
                 matchday: 38
             })
         }
-        fetch(`http://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
+        fetch(`https://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
             'headers': {'X-Auth-Token': "66a3ae1a99224ad7b40b7c3e0360b7d8"}
         }).then(resp => resp.json()).then(response => {
             console.log(response);
@@ -102,7 +102,7 @@ class LeagueStats extends Component {
     }
    takeFixtures = (e) => {
         const FixturesId = e.target.dataset.id;
-        fetch(`http://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
+        fetch(`https://api.football-data.org/v2/competitions/${e.target.dataset.id}/matches`, {
             'headers': {'X-Auth-Token': "66a3ae1a99224ad7b40b7c3e0360b7d8"}
         }).then(resp => resp.json()).then(response => {
             const fixtures = response.matches;
@@ -139,7 +139,7 @@ class LeagueStats extends Component {
 
     takeLeagues = (e) => {
         const leagueID = e.target.dataset.id;
-        fetch(`http://api.football-data.org/v2/competitions/${e.target.dataset.id}/standings`, {
+        fetch(`https://api.football-data.org/v2/competitions/${e.target.dataset.id}/standings`, {
             'headers': {'X-Auth-Token': "66a3ae1a99224ad7b40b7c3e0360b7d8"}
         }).then(resp => resp.json()).then(response => {
             console.log(response.standings[0].table);
@@ -189,7 +189,7 @@ class LeagueStats extends Component {
         })
     }
     componentDidMount(){
-        const CompetitionURL = "http://api.football-data.org/v2/competitions";
+        const CompetitionURL = "https://api.football-data.org/v2/competitions";
         fetch(CompetitionURL, {
             'headers': {'X-Auth-Token': "66a3ae1a99224ad7b40b7c3e0360b7d8"}
         }).then(resp => resp.json()).then(response => {
