@@ -15,7 +15,7 @@ class Livescores extends Component {
         }
     }
     events = (e) => {
-        const urlResults = 'https://livescore-api.com/api-client/scores/live.json?key=pZU6MActpiAQg0FG&secret=49BQZNV4MQWnVlskkmr7WDAmVbccbSTf';
+        const urlResults = 'http://livescore-api.com/api-client/scores/live.json?key=pZU6MActpiAQg0FG&secret=49BQZNV4MQWnVlskkmr7WDAmVbccbSTf';
         fetch(urlResults).then(resp => resp.json()).then(response => {
             console.log(response);
             let results = response.data.match;
