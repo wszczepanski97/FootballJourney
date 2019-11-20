@@ -1,45 +1,38 @@
-.liveScores{
-    background-image: linear-gradient(to bottom, #4d2e2ead, #64706a, #858788, #c0c1c2, #ffffff);
-    min-height: 120vh;
+.liveScores {
+  background-image: linear-gradient(to bottom, #4d2e2ead, #64706a, #858788, #c0c1c2, #ffffff);
+  min-height: 120vh;
 }
 
 @font-face {
-    font-family: 'Pacifico', cursive;
-    src: url("https://fonts.googleapis.com/css?family=Pacifico");
+  font-family: 'Pacifico', cursive;
+  src: url('https://fonts.googleapis.com/css?family=Pacifico');
 }
-
-.neon{
-    color: #FFFFFF;
-        text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
-    padding: 2rem;
-    font-family: 'Pacifico', cursive;
-}
-.listOfMatches{
-    list-style-type: none;
-    margin: 0 auto;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.listOfMatches {
+  list-style-type: none;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .matchItem {
-padding:30px;
-background-color: #e5e5e5;
-border-radius: 7px;
-margin-bottom: 5px;
-    width: 50%;
-    cursor:pointer;
-    font-family: 'Pacifico', cursive;
-    font-size: 20px;
-    text-align:center;
+  padding: 30px;
+  background-color: #e5e5e5;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  width: 50%;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  text-align: center;
 }
 
 .liveevents {
-    background-color: #e5e5e5;
-    border-radius: 7px;
-    width: 50%;
-    font-family: 'Pacifico', cursive;
-    font-size: 20px;
-    text-align:center;
+  background-color: #e5e5e5;
+  border-radius: 7px;
+  width: 50%;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  text-align: center;
 }
