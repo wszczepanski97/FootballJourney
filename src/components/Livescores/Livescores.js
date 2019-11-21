@@ -13,6 +13,7 @@ class Livescores extends Component {
       liveevents: ' ',
     };
   }
+
   events = e => {
     const urlResults =
       'http://livescore-api.com/api-client/scores/live.json?key=pZU6MActpiAQg0FG&secret=49BQZNV4MQWnVlskkmr7WDAmVbccbSTf';
@@ -20,7 +21,7 @@ class Livescores extends Component {
       .then(resp => resp.json())
       .then(response => {
         console.log(response);
-        let results = response.data.match;
+        const results = response.data.match;
         const liveresults = results.map(r => (
           <li
             className="matchItem"
@@ -49,13 +50,14 @@ class Livescores extends Component {
         this.setState({
           results: liveresults,
           events: eventsarray,
-          ampersand: ampersand,
+          ampersand,
         });
       });
   };
+
   takeEvents = e => {
     const array = [];
-    const score = e.target.dataset.score;
+    const {score} = e.target.dataset;
     const hometeam = e.target.dataset.home;
     const awayteam = e.target.dataset.away;
     for (let j = 0; j < this.state.events.length; j++) {
@@ -94,6 +96,7 @@ class Livescores extends Component {
     setTimeout(() => this.events(), 0);
     this.timerID = setInterval(() => this.events(), 60000);
   }
+
   render() {
     return (
       <section className="liveScores">

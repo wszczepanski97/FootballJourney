@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { changeLeagueStatsView as changeLeagueStatsViewAction } from 'actions';
+import PropTypes from 'prop-types';
 
 class LeagueList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      myLeagues: [],
-      matchday: 0,
-    };
-  }
+  state = {
+    label: 'leagueList',
+    myLeagues: [],
+  };
 
   componentDidMount() {
     const CompetitionURL = 'https://api.football-data.org/v2/competitions';
@@ -16,22 +16,21 @@ class LeagueList extends Component {
     })
       .then(resp => resp.json())
       .then(response => {
-        const allLeagues = response.competitions.filter(
-          league =>
-            league.plan === 'TIER_ONE' &&
-            league.area.name !== 'Europe' &&
-            league.area.name !== 'World' &&
-            league.name !== 'Championship',
-        );
-        console.log(allLeagues);
         this.setState({
-          myLeagues: [...allLeagues],
+          myLeagues: response.competitions.filter(
+            league =>
+              league.plan === 'TIER_ONE' &&
+              league.area.name !== 'Europe' &&
+              league.area.name !== 'World' &&
+              league.name !== 'Championship',
+          ),
         });
       });
   }
 
   render() {
-    const { myLeagues } = this.state;
+    const { myLeagues, label } = this.state;
+    const { changeLeagueStatsView } = this.props;
     return (
       <div>
         <ul className="listOfMatches">
@@ -39,7 +38,7 @@ class LeagueList extends Component {
             <li
               data-id={league.id}
               key={league.area.id}
-              onClick={this.takeLeagues}
+              onClick={() => changeLeagueStatsView('leagueTable')}
               className="matchItem"
             >
               {league.area.name} {league.name}
@@ -51,4 +50,12 @@ class LeagueList extends Component {
   }
 }
 
-export default LeagueList;
+const mapDispatchToProps = dispatch => ({
+  changeLeagueStatsView: view => dispatch(changeLeagueStatsViewAction(view)),
+});
+
+LeagueList.propTypes = {
+  changeLeagueStatsView: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(LeagueList);

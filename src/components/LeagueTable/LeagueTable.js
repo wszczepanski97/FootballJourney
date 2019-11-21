@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import Button from 'components/Button/Button';
+import Heading from 'components/Heading/Heading';
+import { changeLeagueStatsView as changeLeagueStatsViewAction } from 'actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class LeagueTable extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      myLeagues: [],
-      leagueName: '',
-      matchday: 0,
-    };
-  }
+  state = {
+    label: 'leagueTable',
+    myLeagues: [],
+    leagueName: '',
+    matchday: 0,
+  };
 
   componentDidMount() {
     // const leagueID = e.target.dataset.id;
@@ -28,13 +31,23 @@ class LeagueTable extends Component {
 
   render() {
     const { myLeagues, leagueName } = this.state;
+    const { changeLeagueStatsView } = this.props;
     return (
       <div>
-        <button className="buttonStyle buttonspace">Back to the Country List</button>
-        <button className="buttonStyle buttonspace" data-id={2000}>
+        <Button
+          className="buttonStyle buttonspace"
+          onClick={() => changeLeagueStatsView('leagueList')}
+        >
+          Back to the Country List
+        </Button>
+        <Button
+          className="buttonStyle buttonspace"
+          data-id={2000}
+          onClick={() => changeLeagueStatsView('leagueFixtures')}
+        >
           Fixtures
-        </button>
-        <h1>{leagueName}</h1>
+        </Button>
+        <Heading style={{ color: 'black' }}>{leagueName}</Heading>
         <table className="table">
           <tbody>
             <tr key={2000}>
@@ -88,4 +101,12 @@ class LeagueTable extends Component {
   }
 }
 
-export default LeagueTable;
+const mapDispatchToProps = dispatch => ({
+  changeLeagueStatsView: view => dispatch(changeLeagueStatsViewAction(view)),
+});
+
+LeagueTable.propTypes = {
+  changeLeagueStatsView: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(LeagueTable);

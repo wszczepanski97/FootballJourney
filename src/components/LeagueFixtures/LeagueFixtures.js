@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Button from 'components/Button/Button';
 import Heading from 'components/Heading/Heading';
+import PropTypes from 'prop-types';
+import { changeLeagueStatsView as changeLeagueStatsViewAction } from 'actions';
+import { connect } from 'react-redux';
 
 class LeagueFixtures extends Component {
   state = {
+    label: 'leagueFixtures',
     allFixturesInTheSeason: [],
     competitionName: '',
     fixtures: [],
@@ -73,14 +77,24 @@ class LeagueFixtures extends Component {
 
   render() {
     const { fixtures, competitionName, matchday } = this.state;
+    const { changeLeagueStatsView } = this.props;
     return (
       <div id="leaguestats" className="leaguestats">
         <ul className="listOfMatches">
           <Heading subtitle style={{ color: 'black' }}>
             {competitionName}
           </Heading>
-          <Button className="buttonStyle buttonspace">Back to the Country List</Button>
-          <Button data-id={2002} className="buttonStyle buttonspace">
+          <Button
+            className="buttonStyle buttonspace"
+            onClick={() => changeLeagueStatsView('leagueList')}
+          >
+            Back to the Country List
+          </Button>
+          <Button
+            data-id={2002}
+            className="buttonStyle buttonspace"
+            onClick={() => changeLeagueStatsView('leagueTable')}
+          >
             Back to the League Table
           </Button>
           <div className="arrowcontainer">
@@ -112,4 +126,12 @@ class LeagueFixtures extends Component {
   }
 }
 
-export default LeagueFixtures;
+const mapDispatchToProps = dispatch => ({
+  changeLeagueStatsView: view => dispatch(changeLeagueStatsViewAction(view)),
+});
+
+LeagueFixtures.propTypes = {
+  changeLeagueStatsView: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(LeagueFixtures);

@@ -3,20 +3,20 @@ import GlobalStyle from 'theme/GlobalStyle';
 import './App.css';
 import Header from 'components/Header/Header';
 import Livescores from 'components/Livescores/Livescores';
-import LeagueList from 'components/LeagueList/LeagueList';
-import LeagueTable from 'components/LeagueTable/LeagueTable';
-import LeagueFixtures from 'components/LeagueFixtures/LeagueFixtures';
+import LeagueStats from 'components/LeagueStats/LeagueStats';
+import { Provider } from 'react-redux';
+import store from 'store';
 
 const App = () => {
   return (
-    <div>
-      <GlobalStyle />
-      <Header />
-      <Livescores />
-      <LeagueList />
-      <LeagueTable />
-      <LeagueFixtures />
-    </div>
+    <Provider store={store}>
+      <div>
+        <GlobalStyle />
+        <Header />
+        <Livescores />
+        <LeagueStats />
+      </div>
+    </Provider>
   );
 };
 

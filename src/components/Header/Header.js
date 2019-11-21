@@ -65,8 +65,8 @@ const Wrapper = styled.header`
 const Header = () => (
   <Wrapper>
     <Heading>Welcome to the football journey!</Heading>
-    <Heading subtitle>It's a place where football is at hand.</Heading>
-    <ButtonToOtherSection section={'#livescores'}>Go on!</ButtonToOtherSection>
+    <Heading subtitle>It&quot;s a place where football is at hand.</Heading>
+    <ButtonToOtherSection section="#livescores">Go on!</ButtonToOtherSection>
   </Wrapper>
 );
 export default Header;
