@@ -2,8 +2,10 @@ import React from 'react';
 import GlobalStyle from 'theme/GlobalStyle';
 import './App.css';
 import Header from 'components/Header/Header';
-import LeagueStats from 'components/LeagueStats/LeagueStats';
 import Livescores from 'components/Livescores/Livescores';
+import LeagueList from 'components/LeagueList/LeagueList';
+import LeagueTable from 'components/LeagueTable/LeagueTable';
+import LeagueFixtures from 'components/LeagueFixtures/LeagueFixtures';
 
 const App = () => {
   return (
@@ -11,7 +13,9 @@ const App = () => {
       <GlobalStyle />
       <Header />
       <Livescores />
-      <LeagueStats />
+      <LeagueList />
+      <LeagueTable />
+      <LeagueFixtures />
     </div>
   );
 };
